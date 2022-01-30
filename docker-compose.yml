@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  laravel:
+    build: .
+    container_name: laravel
+    tty: true
+    volumes:
+      - type: volume
+        source: mysql_data
+        target: /var/lib/mysql
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
+
